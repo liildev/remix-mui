@@ -1,5 +1,5 @@
 {
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/components/ExampleCard/index.jsx", "app/components/MKTypography/MKTypographyRoot.js", "app/components/MKTypography/index.jsx", "app/footer.routes.jsx", "app/routes/_index/index.jsx"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
