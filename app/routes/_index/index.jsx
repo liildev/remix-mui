@@ -9,7 +9,7 @@ import MKBox from "~/components/MKBox";
 import MKTypography from "~/components/MKTypography";
 
 // Material Kit 2 PRO React examples
-// import DefaultNavbar from "~/examples/Navbars/DefaultNavbar";
+import DefaultNavbar from "~/examples/Navbars/DefaultNavbar";
 
 // Presentation page sections
 import MainPageCards from "./sections/MainPageCards";
@@ -23,7 +23,7 @@ import DreamsOverview from "./sections/DreamsOverview";
 // import ContentRequest from "./sections/ContentRequest";
 
 // Routes
-// import routes from "routes";
+import routes from "~/routes";
 import footerRoutes from "~/footer.routes";
 
 // Images
@@ -44,7 +44,14 @@ function Home() {
 
   return (
     <>
-      {/* <DefaultNavbar routes={routes} brand="Use Your Dream" sticky /> */}
+      {/* <Suspense fallback={<div>Loading...</div>}>
+        <Await resolve={somePromise}>
+          {(resolvedValue) => <p>{resolvedValue}</p>}
+        </Await>
+      </Suspense>; */}
+
+      <DefaultNavbar routes={routes} brand="Use Your Dream" sticky />
+
       <MainPageCards />
       <MKBox
         minHeight="60vh"

@@ -15,7 +15,7 @@ import MKBox from "~/components/MKBox";
 import MKTypography from "~/components/MKTypography";
 
 // Material Kit 2 PRO React examples
-import DefaultNavbarDropdown from "~~/examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
+import DefaultNavbarDropdown from "./DefaultNavbarDropdown";
 
 function DefaultNavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");
