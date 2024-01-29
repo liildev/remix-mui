@@ -40,15 +40,17 @@ const Document = withEmotionCache(({ children }: PropsWithChildren, emotionCache
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:type" content="website" />
         <meta name="theme-color" content="#1A73E8" />
-        <meta name="google-site-verification" content="vebD2Syk5DuLNB2ovP9tJ-HPb34bwpAtzMiCCqSMKbU" />
         <meta name="keywords" content="dreams, web development, dream-analyser, use-your-dreams" />
+        <meta name="google-site-verification" content="vebD2Syk5DuLNB2ovP9tJ-HPb34bwpAtzMiCCqSMKbU" />
+        <meta property="fb:app_id" content="1437413666882697" />
+        <meta property="og:type" content="website" />
         <meta property="og:image:height" content='1200' />
         <meta property="og:image:width" content='630' />
         <meta property="og:image:type" content='image/jpeg' />
         <meta property="og:url" content={`https://useyourdream.com${pathname}`} />
         <meta name="twitter:url" content={`https://useyourdream.com${pathname}`} />
+
         <link rel="canonical" href={`https://useyourdream.com${pathname}`} />
         <link rel="shortcut icon" />
         <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon.png" />
