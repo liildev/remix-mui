@@ -8,7 +8,9 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  isRouteErrorResponse,
   useLocation,
+  useRouteError,
 } from "@remix-run/react";
 import { withEmotionCache } from '@emotion/react';
 import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/material';
@@ -80,11 +82,29 @@ export default function App() {
   );
 }
 
-// export async function loader() {
-//   return JSON.stringify({
-//     ENV: {
-//       SUPABASE_URL: process.env.SUPABASE_URL,
-//       SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
-//     },
-//   });
-// }
+export function ErrorBoundary() {
+  const error = useRouteError();
+
+  <Document>
+    {isRouteErrorResponse(error) ?
+      (
+        <div>
+          <h1>
+            {error.status} {error.statusText}
+          </h1>
+          <p>{error.data}</p>
+        </div>
+      )
+      : error instanceof Error ?
+        (
+          <div>
+            <h1>Error</h1>
+            <p>{error.message}</p>
+            <p>The stack trace is:</p>
+            <pre>{error.stack}</pre>
+          </div>
+        ) :
+        <p>[ErrorBoundary]: There was an error: error</p>
+    }
+  </Document>
+}

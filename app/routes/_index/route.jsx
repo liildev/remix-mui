@@ -1,4 +1,6 @@
-// import { useEffect, useState } from "react";
+/* eslint-disable no-undef */
+import { useEffect, useState } from "react";
+import { json, useLoaderData } from "@remix-run/react";
 
 // @mui material components
 import Container from "@mui/material/Container";
@@ -22,34 +24,39 @@ import DefaultFooter from "~/components/Footers/DefaultFooter";
 import DreamsOverview from "./sections/DreamsOverview";
 // import ContentRequest from "./sections/ContentRequest";
 
+import { metaCreator } from "~/meta";
+import { useSupabaseSession } from "~/auth/client";
+
 // Routes
 import routes from "~/routes";
 import footerRoutes from "~/footer.routes";
 
 // Images
 import bgImage from "~/assets/images/uyd-banner.png";
-// import { useSupabaseSession } from "~/auth/client";
-import { metaCreator } from "~/meta";
+
 
 export const meta = () => metaCreator('Use Your Dream', 'UYD: Free Dream Analyser and guides to understand and use your dreams more effectively', '/palm.jpeg');
 
-function Home() {
-  // const { session } = useSupabaseSession();
-  // const [, setUserSession] = useState(null);
 
-  // useEffect(() => {
-  //   setUserSession(session);
-  //   console.log("HomeSession", session);
-  // }, [session]);
+export const loader = async () => {
+  return json({
+    supabaseUrl: process.env.SUPABASE_URL,
+    supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+  });
+}
+
+function Home() {
+  const { supabaseUrl, supabaseAnonKey } = useLoaderData();
+  const { session } = useSupabaseSession(supabaseUrl, supabaseAnonKey);
+  const [, setUserSession] = useState(null);
+
+  useEffect(() => {
+    setUserSession(session);
+    console.log("HomeSession", session);
+  }, [session]);
 
   return (
     <>
-      {/* <Suspense fallback={<div>Loading...</div>}>
-        <Await resolve={somePromise}>
-          {(resolvedValue) => <p>{resolvedValue}</p>}
-        </Await>
-      </Suspense>; */}
-
       <DefaultNavbar routes={routes} brand="Use Your Dream" sticky />
 
       <MainPageCards />
