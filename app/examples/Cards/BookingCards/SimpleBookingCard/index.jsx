@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-// react-router components
+
 import { Link } from "@remix-run/react";
 
 // prop-types is a library for typechecking of props

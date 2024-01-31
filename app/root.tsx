@@ -83,30 +83,31 @@ export default function App() {
     </Document>
   );
 }
-
 export function ErrorBoundary() {
   const error = useRouteError();
-
-  <Document>
-    {isRouteErrorResponse(error) ?
-      (
-        <div>
-          <h1>
-            {error.status} {error.statusText}
-          </h1>
-          <p>{error.data}</p>
-        </div>
-      )
-      : error instanceof Error ?
+  
+  return (
+    <Document>
+      {isRouteErrorResponse(error) ?
         (
           <div>
-            <h1>Error</h1>
-            <p>{error.message}</p>
-            <p>The stack trace is:</p>
-            <pre>{error.stack}</pre>
+            <h1>
+              {error.status} {error.statusText}
+            </h1>
+            <p>{error.data}</p>
           </div>
-        ) :
-        <p>[ErrorBoundary]: There was an error: error</p>
-    }
-  </Document>
+        )
+        : error instanceof Error ?
+          (
+            <div>
+              <h1>Error</h1>
+              <p>{error.message}</p>
+              <p>The stack trace is:</p>
+              <pre>{error.stack}</pre>
+            </div>
+          ) :
+          <p>[ErrorBoundary]: There was an error: error</p>
+      }
+    </Document>
+  );
 }

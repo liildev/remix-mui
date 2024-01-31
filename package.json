@@ -32,7 +32,11 @@
     "react-countup": "^6.5.0",
     "react-dom": "^18.2.0",
     "react-infinite-scroll-component": "^6.1.0",
-    "react-syntax-highlighter": "^15.5.0"
+    "react-syntax-highlighter": "^15.5.0",
+    "rellax": "^1.12.1",
+    "remix-flat-routes": "^0.6.4",
+    "swiper": "^6.8.4",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.5.1",

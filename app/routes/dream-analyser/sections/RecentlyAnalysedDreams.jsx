@@ -15,7 +15,7 @@ import RecentlyAnalysedDreamCard from "~/components/Cards/RecentlyAnalysedDreamC
 import PropTypes from "prop-types";
 
 // Helpers
-import { formatDate } from "~/helpers";
+import { formatDate } from "~/lib/helpers";
 import RecentlyAnalysedDreamCardSkeletonLoader from "~/components/SkeletonLoader/RecentlyAnalysedDreamCardSkeletonLoader";
 
 const RecentlyAnalysedDreams = memo(function RecentlyAnalysedDreams({

@@ -22,23 +22,23 @@ import DreamStats from "./sections/DreamStats.jsx";
 import GetFeedback from "~/components/Sections/GetFeedback";
 
 // Routes
-import routes from "~/routes";
-import footerRoutes from "~/footer.routes";
+import routes from "~/constants/routes/main";
+import footerRoutes from "~/constants/routes/footer";
 
 // Images
 import bgImage from "~/assets/images/bg-about-us.jpg";
 import AnalyserResponse from "./sections/AnalyserResponse.jsx";
 
 // Functions & Helpers
-import { analyseDream, publishAnalysedDream } from "~/apis";
+import { analyseDream, publishAnalysedDream } from "~/lib/api";
 import {
   apiCallsLeft,
   formatQuery,
   formatterAnalysedDream,
   saveAnalysedDreamToLocalStorage,
-} from "~/helpers";
+} from "~/lib/helpers";
 import { ANALYSER_INPUT_MAX_CHARS, DEFAULT_MAX_API_CALLS } from "~/constants";
-import { metaCreator } from "~/meta";
+import { metaCreator } from "~/lib/meta";
 
 function validateInput(input, length) {
   if (input.length < length) {

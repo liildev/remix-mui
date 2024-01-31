@@ -24,12 +24,12 @@ import DefaultFooter from "~/components/Footers/DefaultFooter";
 import DreamsOverview from "./sections/DreamsOverview";
 // import ContentRequest from "./sections/ContentRequest";
 
-import { metaCreator } from "~/meta";
+import { metaCreator } from "~/lib/meta";
 import { useSupabaseSession } from "~/auth/client";
 
 // Routes
-import routes from "~/routes";
-import footerRoutes from "~/footer.routes";
+import routes from "~/constants/routes/main";
+import footerRoutes from "~/constants/routes/footer";
 
 // Images
 import bgImage from "~/assets/images/uyd-banner.png";

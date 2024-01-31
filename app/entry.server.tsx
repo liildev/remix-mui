@@ -1,11 +1,12 @@
 import * as ReactDOMServer from 'react-dom/server';
 import { RemixServer } from '@remix-run/react';
 import type { EntryContext } from '@remix-run/node';
-import createEmotionCache from './emotion';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { CacheProvider } from '@emotion/react';
+import { createEmotionCache } from './context';
 import createEmotionServer from '@emotion/server/create-instance';
+
 import theme from "./assets/theme";
 
 export default function handleRequest(

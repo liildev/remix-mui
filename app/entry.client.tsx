@@ -4,8 +4,7 @@ import { RemixBrowser } from '@remix-run/react';
 import { CacheProvider } from '@emotion/react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import ClientStyleContext from './context';
-import createEmotionCache from './emotion';
+import ClientStyleContext, { createEmotionCache } from './context';
 import theme from "./assets/theme";
 
 interface ClientCacheProviderProps {
