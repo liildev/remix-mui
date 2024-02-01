@@ -6,7 +6,6 @@ import SwiperCore, { Autoplay, Navigation } from "swiper";
 // SwiperJS react components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";

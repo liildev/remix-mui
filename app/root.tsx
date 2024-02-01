@@ -13,8 +13,12 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import { withEmotionCache } from '@emotion/react';
+import { ThemeProvider } from '@mui/material/styles';
 import { unstable_useEnhancedEffect as useEnhancedEffect } from '@mui/material';
-import ClientStyleContext from './context';
+import ClientStyleContext from '~/context';
+import theme from "~/assets/theme";
+// import minStyles from "swiper/swiper.min.css";
+// import navigationStyles from 'swiper/components/navigation/navigation.min.css';
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -60,7 +64,10 @@ const Document = withEmotionCache(({ children }: PropsWithChildren, emotionCache
         <link
           href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
           rel="stylesheet" />
-
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.css"
+        />
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossOrigin="anonymous"></script>
 
         <Meta />
@@ -79,13 +86,15 @@ const Document = withEmotionCache(({ children }: PropsWithChildren, emotionCache
 export default function App() {
   return (
     <Document>
-      <Outlet />
+      <ThemeProvider theme={theme}>
+        <Outlet />
+      </ThemeProvider>
     </Document>
   );
 }
 export function ErrorBoundary() {
   const error = useRouteError();
-  
+
   return (
     <Document>
       {isRouteErrorResponse(error) ?

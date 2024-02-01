@@ -36,7 +36,6 @@ export const meta = () => metaCreator('Dreaming about Death | Guides', 'Dreaming
 
 function DeathRelatedDreams() {
   const headerRef = useRef(null);
-  // // document.title = "Dreaming about Death | Guides | UYD";
 
   // Setting up rellax
   useEffect(() => {
