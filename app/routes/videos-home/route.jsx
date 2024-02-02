@@ -31,7 +31,7 @@ import footerRoutes from "~/constants/routes/footer";
 import bgImage from "~/assets/images/bg-rental.jpeg";
 import { metaCreator } from "~/lib/meta";
 
-export const meta = () => metaCreator('ContentRequest', 'ContentRequest', bgImage)
+export const meta = () => metaCreator("ContentRequest", "ContentRequest", bgImage);
 
 function VideosHome() {
   return (
