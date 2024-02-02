@@ -1,0 +1,28 @@
+{
+	"include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/assets/theme/index.js", "app/lambdas/analysedDreams/functions/handler.js"],
+	"compilerOptions": {
+		"lib": ["DOM", "DOM.Iterable", "ES2019"],
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"jsx": "react-jsx",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"target": "ES2019",
+		"strict": true,
+		"allowJs": true,
+		"forceConsistentCasingInFileNames": true,
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./app/*"],
+			"@components/*": ["./app/components/*"],
+			"@components": ["./app/components"],
+			"@contexts/*": ["app/context/*"],
+			"@contexts": ["app/context"],
+			"@styles/*": ["./app/styles/*"],
+			"@styles": ["./app/styles"],
+			"@public/*": ["public/*"],
+			"@public": ["public"]
+		},
+		"noEmit": true
+	}
+}
